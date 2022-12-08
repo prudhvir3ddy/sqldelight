@@ -28,27 +28,27 @@ package app.cash.sqldelight.db
 interface SqlPreparedStatement {
 
   /**
-   * Bind [bytes] to the underlying statement at [index].
+   * Bind [bytes] to the underlying statement at zero-based [index].
    */
   fun bindBytes(index: Int, bytes: ByteArray?)
 
   /**
-   * Bind [long] to the underlying statement at [index].
+   * Bind [long] to the underlying statement at zero-based [index].
    */
   fun bindLong(index: Int, long: Long?)
 
   /**
-   * Bind [double] to the underlying statement at [index].
+   * Bind [double] to the underlying statement at zero-based [index].
    */
   fun bindDouble(index: Int, double: Double?)
 
   /**
-   * Bind [string] to the underlying statement at [index].
+   * Bind [string] to the underlying statement at zero-based [index].
    */
   fun bindString(index: Int, string: String?)
 
   /**
-   * Bind [boolean] to the underlying statement at [index].
+   * Bind [boolean] to the underlying statement at zero-based [index].
    */
   fun bindBoolean(index: Int, boolean: Boolean?)
 }

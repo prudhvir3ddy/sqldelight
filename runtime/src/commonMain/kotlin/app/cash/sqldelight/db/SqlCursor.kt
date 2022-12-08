@@ -29,27 +29,27 @@ interface SqlCursor {
   fun next(): Boolean
 
   /**
-   * @return The string or null value of column [index] for the current row of the result set.
+   * @return The string or null value of zero-based column [index] for the current row of the result set.
    */
   fun getString(index: Int): String?
 
   /**
-   * @return The int or null value of column [index] for the current row of the result set.
+   * @return The int or null value of zero-based column [index] for the current row of the result set.
    */
   fun getLong(index: Int): Long?
 
   /**
-   * @return The bytes or null value of column [index] for the current row of the result set.
+   * @return The bytes or null value of zero-based column [index] for the current row of the result set.
    */
   fun getBytes(index: Int): ByteArray?
 
   /**
-   * @return The double or null value of column [index] for the current row of the result set.
+   * @return The double or null value of zero-based column [index] for the current row of the result set.
    */
   fun getDouble(index: Int): Double?
 
   /**
-   * @return The boolean or null value of column [index] for the current row of the result set.
+   * @return The boolean or null value of zero-based column [index] for the current row of the result set.
    */
   fun getBoolean(index: Int): Boolean?
 }

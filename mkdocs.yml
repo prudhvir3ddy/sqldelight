@@ -196,6 +196,14 @@ nav:
           - 'sqljs-driver': 1.x/sqljs-driver/index.md
           - 'runtime': 1.x/runtime/index.md
 
+  - 'Customizing':
+      - 'Getting Started': custom/index.md
+      - 'Dialect': custom/dialects.md
+
+  - 'Community':
+      - 'Drivers': community/drivers.md
+      - 'Dialects': community/dialects.md
+
   - '2.x API': 2.x/index.html
 
   - '1.x API':
