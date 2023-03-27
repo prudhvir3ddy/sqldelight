@@ -204,4 +204,14 @@ class IntegrationTests {
       ),
     )
   }
+
+  @Test fun predefined() {
+    val notFound: sqlite.schema.Sqlite_sequence? = queryWrapper.predefinedQueries.getSequence("foo").executeAsOneOrNull()
+
+    assertThat(
+      notFound,
+    ).isEqualTo(
+      null,
+    )
+  }
 }

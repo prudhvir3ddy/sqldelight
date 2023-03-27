@@ -6,6 +6,7 @@ import app.cash.sqldelight.dialects.sqlite_3_18.grammar.SqliteParserUtil
 import app.cash.sqldelight.dialects.sqlite_3_18.grammar.mixins.ColumnDefMixin
 import app.cash.sqldelight.dialects.sqlite_3_18.grammar.mixins.StatementValidatorMixin
 import app.cash.sqldelight.dialects.sqlite_3_18.grammar.psi.SqliteTypes
+import com.alecstrong.sql.psi.core.PredefinedTable
 import com.alecstrong.sql.psi.core.SqlParserUtil
 import com.alecstrong.sql.psi.core.psi.SqlTypes
 import com.intellij.icons.AllIcons
@@ -65,4 +66,18 @@ open class SqliteDialect : SqlDelightDialect {
   override fun typeResolver(parentResolver: TypeResolver): TypeResolver {
     return SqliteTypeResolver(parentResolver)
   }
+
+  override val predefinedSystemTables: List<PredefinedTable> = listOf(
+    PredefinedTable(
+      "sqlite.schema",
+      "sqlite_sequence",
+      //language=sqlite
+      """
+        |CREATE TABLE sqlite_sequence(
+        |  name TEXT NOT NULL,
+        |  seq INTEGER NOT NULL
+        |);
+      """.trimMargin(),
+    ),
+  )
 }
