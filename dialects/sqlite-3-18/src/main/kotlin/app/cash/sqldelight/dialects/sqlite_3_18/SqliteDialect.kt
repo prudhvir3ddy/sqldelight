@@ -69,14 +69,14 @@ open class SqliteDialect : SqlDelightDialect {
 
   override val predefinedSystemTables: List<PredefinedTable> = listOf(
     PredefinedTable(
-      "sqlite.schema",
-      "sqlite_sequence",
+      packageName = "sqlite.schema",
+      simpleFileName = "sqlite_sequence",
       //language=sqlite
-      """
-        |CREATE TABLE sqlite_sequence(
-        |  name TEXT NOT NULL,
-        |  seq INTEGER NOT NULL
-        |);
+      content = """
+              |CREATE TABLE sqlite_sequence(
+              |  name TEXT NOT NULL,
+              |  seq INTEGER NOT NULL
+              |);
       """.trimMargin(),
     ),
   )
