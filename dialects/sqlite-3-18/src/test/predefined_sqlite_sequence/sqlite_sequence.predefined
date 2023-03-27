@@ -1,4 +1,0 @@
-CREATE TABLE sqlite_sequence(
-  name TEXT NOT NULL,
-  seq INTEGER NOT NULL
-);
