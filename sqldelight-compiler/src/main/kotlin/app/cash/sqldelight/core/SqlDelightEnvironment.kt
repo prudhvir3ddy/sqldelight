@@ -168,12 +168,15 @@ class SqlDelightEnvironment(
       logger("----- END ${it.name} in $timeTaken ms ------")
     }
 
-    predefinedTablesVirtualFiles.value.forEach {
-      val sqlFile = PsiManager.getInstance(project).findFile(it)!! as SqlDelightFile
-      SqlDelightCompiler.writeTableInterfaces(
-        sqlFile,
-        writer,
-      )
+    if (properties.dependencies.isEmpty()) {
+      // generate the system tables only once in the root db.
+      predefinedTablesVirtualFiles.value.forEach {
+        val sqlFile = PsiManager.getInstance(project).findFile(it)!! as SqlDelightFile
+        SqlDelightCompiler.writeTableInterfaces(
+          sqlFile,
+          writer,
+        )
+      }
     }
 
     topMigrationFile?.let { migrationFile ->
